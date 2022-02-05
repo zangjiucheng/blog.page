@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Blog</title>
+    <link href="https://zangjiucheng.github.io/blog.page/feed.xml" rel="self" />
+    <link href="https://zangjiucheng.github.io/blog.page" />
+    <updated>2022-02-05T11:12:30-05:00</updated>
+    <author>
+        <name>Jiucheng Zang</name>
+    </author>
+    <id>https://zangjiucheng.github.io/blog.page</id>
+
+    <entry>
+        <title>🎇 New Year 2022!</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://zangjiucheng.github.io/blog.page/new-year-2022/index.html"/>
+        <id>https://zangjiucheng.github.io/blog.page/new-year-2022/index.html</id>
+
+        <updated>2022-02-05T11:12:30-05:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://zangjiucheng.github.io/blog.page/media/posts/2/new_year_2022.jpg" alt="" />
+                    New Year, New chance! ☘️ 
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://zangjiucheng.github.io/blog.page/media/posts/2/new_year_2022.jpg" alt="" />
+                <figure>New Year, New chance! ☘️<!--EndFragment --></figure>
+<figure class="post__video"> <iframe loading="lazy" width="720" height="404" src="https://www.youtube.com/embed/r6b4BS17_IU" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe></figure>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title> About my self 👦🏻</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://zangjiucheng.github.io/blog.page/about-my-self/index.html"/>
+        <id>https://zangjiucheng.github.io/blog.page/about-my-self/index.html</id>
+
+        <updated>2022-02-05T11:04:08-05:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://zangjiucheng.github.io/blog.page/media/posts/1/IMG_2934.JPG.jpg" alt="" />
+                    I am just a normal person:) who is a international student studying in Lauren Hill Academy Montreal Canada. During free time I prefer skiing, photography, math challenge. Also a programmer. I wanna meet more people also make more friend (That’s why I build this website&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://zangjiucheng.github.io/blog.page/media/posts/1/IMG_2934.JPG.jpg" alt="" />
+                <p>I am just a normal person:) who is a international student studying in Lauren Hill Academy <em>Montreal Canada. During free time </em>I prefer skiing, photography, math challenge. Also a programmer. I wanna meet more people also make more friend (That’s why I build this website 🤣 )</p>
+<figure class="post__image"><img loading="lazy"  src="https://zangjiucheng.github.io/blog.page/media/posts/1/Wei-Biao-Ti-1.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-xs.jpg 300w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-sm.jpg 480w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-md.jpg 768w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-lg.jpg 1024w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-xl.jpg 1360w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-2xl.jpg 1600w"  alt="" width="2000" height="2000"></figure>
+            ]]>
+        </content>
+    </entry>
+</feed>

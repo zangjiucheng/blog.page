@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://zangjiucheng.github.io/blog.page/sitemap.xml

@@ -1,0 +1,44 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Blog",
+    "description": "",
+    "home_page_url": "https://zangjiucheng.github.io/blog.page",
+    "feed_url": "https://zangjiucheng.github.io/blog.page/feed.json",
+    "user_comment": "",
+    "icon": "https://zangjiucheng.github.io/blog.page/media/website/web_icon.ico",
+    "author": {
+        "name": "Jiucheng Zang"
+    },
+    "items": [
+        {
+            "id": "https://zangjiucheng.github.io/blog.page/new-year-2022/index.html",
+            "url": "https://zangjiucheng.github.io/blog.page/new-year-2022/index.html",
+            "title": "🎇 New Year 2022!",
+            "summary": "New Year, New chance! ☘️ ",
+            "content_html": "<figure>New Year, New chance! ☘️<!--EndFragment --></figure>\n<figure class=\"post__video\"> <iframe loading=\"lazy\" width=\"720\" height=\"404\" src=\"https://www.youtube.com/embed/r6b4BS17_IU\" allowfullscreen=\"allowfullscreen\" data-mce-fragment=\"1\"></iframe></figure>",
+            "image": "https://zangjiucheng.github.io/blog.page/media/posts/2/new_year_2022.jpg",
+            "author": {
+                "name": "Jiucheng Zang"
+            },
+            "tags": [
+            ],
+            "date_published": "2022-02-05T11:10:20-05:00",
+            "date_modified": "2022-02-05T11:12:30-05:00"
+        },
+        {
+            "id": "https://zangjiucheng.github.io/blog.page/about-my-self/index.html",
+            "url": "https://zangjiucheng.github.io/blog.page/about-my-self/index.html",
+            "title": " About my self 👦🏻",
+            "summary": "I am just a normal person:) who is a international student studying in Lauren Hill Academy Montreal Canada. During free time I prefer skiing, photography, math challenge. Also a programmer. I wanna meet more people also make more friend (That’s why I build this website&hellip;",
+            "content_html": "<p>I am just a normal person:) who is a international student studying in Lauren Hill Academy <em>Montreal Canada. During free time </em>I prefer skiing, photography, math challenge. Also a programmer. I wanna meet more people also make more friend (That’s why I build this website 🤣 )</p>\n<figure class=\"post__image\"><img loading=\"lazy\"  src=\"https://zangjiucheng.github.io/blog.page/media/posts/1/Wei-Biao-Ti-1.jpg\" sizes=\"(max-width: 48em) 100vw, 768px\" srcset=\"https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-xs.jpg 300w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-sm.jpg 480w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-md.jpg 768w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-lg.jpg 1024w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-xl.jpg 1360w ,https://zangjiucheng.github.io/blog.page/media/posts/1/responsive/Wei-Biao-Ti-1-2xl.jpg 1600w\"  alt=\"\" width=\"2000\" height=\"2000\"></figure>",
+            "image": "https://zangjiucheng.github.io/blog.page/media/posts/1/IMG_2934.JPG.jpg",
+            "author": {
+                "name": "Jiucheng Zang"
+            },
+            "tags": [
+            ],
+            "date_published": "2022-02-05T00:42:55-05:00",
+            "date_modified": "2022-02-05T11:04:08-05:00"
+        }
+    ]
+}
