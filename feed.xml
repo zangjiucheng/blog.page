@@ -3,7 +3,7 @@
     <title>Blog</title>
     <link href="https://zangjiucheng.github.io/blog.page/feed.xml" rel="self" />
     <link href="https://zangjiucheng.github.io/blog.page" />
-    <updated>2022-05-21T15:59:12-04:00</updated>
+    <updated>2022-05-21T16:24:47-04:00</updated>
     <author>
         <name>Jiucheng Zang</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://zangjiucheng.github.io/blog.page/lha-music-night/index.html"/>
         <id>https://zangjiucheng.github.io/blog.page/lha-music-night/index.html</id>
 
-        <updated>2022-05-21T15:59:12-04:00</updated>
+        <updated>2022-05-21T16:24:47-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://zangjiucheng.github.io/blog.page/media/posts/8/281642903_1678451065865652_2859882371418473844_n-2.jpg" alt="" />
@@ -39,6 +39,11 @@
   <div  class="gallery-wrapper gallery-wrapper--full">
     <div class="gallery" data-columns="3">
       <figure class="gallery__item">
+      <a href="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281329533_161480786333055_2061872505733550605_n-2.jpg" data-size="1080x811">
+        <img loading="lazy" src="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281329533_161480786333055_2061872505733550605_n-2-thumbnail.jpg" height="541" width="720" alt="" />
+      </a>
+      
+    </figure><figure class="gallery__item">
       <a href="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281337766_378658034190716_7606290427656722646_n-2.jpg" data-size="1080x814">
         <img loading="lazy" src="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281337766_378658034190716_7606290427656722646_n-2-thumbnail.jpg" height="543" width="720" alt="" />
       </a>
@@ -46,11 +51,6 @@
     </figure><figure class="gallery__item">
       <a href="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281440582_461400769086479_7925680810180482604_n-2.jpg" data-size="1080x814">
         <img loading="lazy" src="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281440582_461400769086479_7925680810180482604_n-2-thumbnail.jpg" height="543" width="720" alt="" />
-      </a>
-      
-    </figure><figure class="gallery__item">
-      <a href="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281329533_161480786333055_2061872505733550605_n-2.jpg" data-size="1080x811">
-        <img loading="lazy" src="https://zangjiucheng.github.io/blog.page/media/posts/8/gallery/281329533_161480786333055_2061872505733550605_n-2-thumbnail.jpg" height="541" width="720" alt="" />
       </a>
       
     </figure>
