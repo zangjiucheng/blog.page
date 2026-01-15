@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>Blog</title>
+    <link href="https://blog.jiucheng-zang.ca/feed.xml" rel="self" />
+    <link href="https://blog.jiucheng-zang.ca" />
+    <updated>2025-11-02T09:20:15-05:00</updated>
+    <author>
+        <name>Jiucheng Zang</name>
+    </author>
+    <id>https://blog.jiucheng-zang.ca</id>
+
+    <entry>
+        <title>PyCon 2025 Reflections: Free-Threaded Python, Performance Evolution, and Meeting Guido 🧑‍💻</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/pycon-2025-reflections-free-threaded-python-performance-evolution-and-meeting-guido/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/pycon-2025-reflections-free-threaded-python-performance-evolution-and-meeting-guido/index.html</id>
+
+        <updated>2025-05-20T11:57:16-04:00</updated>
+            <summary>
+                <![CDATA[
+                    
+    <h2 id="introductionlessbrgreater">
+      Introduction<br>
+    </h2>
+
+  <p>
+    <a href="https://us.pycon.org/2025/">PyCon 2025</a> in Pittsburgh was more than just a conference — it was a moment where the past, present, and future of Python collided in the best possible way. This year’s event was packed with energy, deep technical conversations, and unforgettable personal moments — including the opportunity to meet Guido van Rossum, the creator of Python, in person.<br><br>In this post, I’ll share highlights from the event, dig into what I learned about Free-threaded Python (PEP 703), and reflect on the direction our community is heading.
+  </p>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+    <h2 id="introductionlessbrgreater">
+      Introduction<br>
+    </h2>
+
+  <p>
+    <a href="https://us.pycon.org/2025/">PyCon 2025</a> in Pittsburgh was more than just a conference — it was a moment where the past, present, and future of Python collided in the best possible way. This year’s event was packed with energy, deep technical conversations, and unforgettable personal moments — including the opportunity to meet Guido van Rossum, the creator of Python, in person.<br><br>In this post, I’ll share highlights from the event, dig into what I learned about Free-threaded Python (PEP 703), and reflect on the direction our community is heading.
+  </p>
+
+
+    <h2 id="meeting-guido-a-personal-milestone">
+      Meeting Guido: A Personal Milestone
+    </h2>
+
+  <p>
+    Let’s be real — for most Python developers, meeting <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido</a> is like meeting a legend. I had the chance to chat with him briefly between sessions, and it struck me how approachable, curious, and humble he still is after decades of shaping one of the world’s most beloved programming languages.<br><br>We talked about Python’s growth and the challenges of modernizing a language with such a broad user base. His enthusiasm for what's next — especially Free-threaded Python — was contagious.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/IMG_6392.JPG" height="1440" width="1080" alt=""  sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/23/responsive/IMG_6392-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/23/responsive/IMG_6392-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/23/responsive/IMG_6392-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/23/responsive/IMG_6392-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/23/responsive/IMG_6392-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/23/responsive/IMG_6392-2xl.webp 1600w">
+      
+    </figure>
+
+  <p id="meeting-guido-van-rossum-at-pycon-2025-a-highlight-ill-never-forget">
+    (Meeting Guido van Rossum at PyCon 2025 — a highlight I’ll never forget)
+  </p>
+
+    <h2 id="free-threaded-python-pep-703-unlocking-parallelism-in-cpython">
+      Free-Threaded Python (PEP 703): Unlocking Parallelism in CPython
+    </h2>
+
+  <p>
+    The technical centerpiece of the conference for me was the growing momentum around <a href="https://peps.python.org/pep-0703/">PEP 703</a>, which proposes making the Global Interpreter Lock (GIL) optional in CPython.<br>
+  </p>
+
+    <h3 id="what-is-the-gil">
+      🌐 What is the GIL?
+    </h3>
+
+  <p>
+    The GIL is a mutex that prevents multiple native threads from executing Python bytecodes at once. While it simplifies memory management and ensures thread safety, it limits multi-core performance — particularly in CPU-bound workloads.<br>
+  </p>
+
+    <h3 id="why-free-threaded-python-matters">
+      🔓 Why Free-threaded Python Matters
+    </h3>
+
+  <p>
+    With PEP 703, Python is taking a bold step: allowing developers to compile CPython without the GIL. This opens the door for true parallel execution and improved scaling in multi-threaded applications.<br><br>Here’s what stood out from talks and hallway conversations:<br><br>    Performance Benchmarks: While the no-GIL build isn’t universally faster yet, there are promising improvements for multi-threaded workloads (e.g., scientific computing, data processing, game engines).<br><br>    Backward Compatibility: One of the biggest challenges is ensuring C extensions work properly in a no-GIL world. Some extension authors are already testing and adapting.<br><br>    New Responsibilities: Without the GIL, thread safety becomes your responsibility. It’s a tradeoff — but a powerful one if handled right.
+  </p>
+
+    <h3 id="want-to-try-free-threaded-python-try-python-314t">
+      🔧 Want to Try Free-threaded Python? Try python 3.14t
+    </h3>
+
+  <p>
+    If you’re curious and want to get hands-on with Free-threaded Python, the best place to start is the <a href="https://www.python.org/downloads/release/python-3140a4/">python3.14t build </a>— the experimental no-GIL version of CPython, currently maintained and invited by the Meta team.
+  </p>
+
+    <blockquote class="blockquote">
+      &nbsp;⚠️ This build is experimental — it’s not a drop-in replacement for production&nbsp;environments yet. But it’s perfect for exploring how your code (or extensions) might perform in a no-GIL world.
+    </blockquote>
+
+  <p>
+    <strong>🧠 Tip:</strong>
+  </p>
+
+  <p>
+    Start by testing multi-threaded CPU-bound code — things like parsing, image processing, or custom algorithms — and compare it with standard CPython. You’ll quickly start to see what Free-threaded Python makes possible.
+  </p>
+
+    <h2 id="other-highlights-from-pycon-2025lessbrgreater">
+      Other Highlights from PyCon 2025<br>
+    </h2>
+
+  <p>
+    Aside from PEP 703, PyCon offered so much more:
+  </p>
+
+  <ul>
+    <li>Talks on Python in AI/ML and how tooling is adapting to newer LLM and vector workloads.</li><li>A vibrant expo hall, rich hallway tracks, and spontaneous discussions that only happen at PyCon.</li>
+  </ul>
+
+    <h2 id="takeaways-and-looking-ahead">
+      Takeaways and Looking Ahead
+    </h2>
+
+  <p>
+    PyCon 2025 reinforced a core truth: Python isn’t just a language — it’s a community that continues to evolve, welcome, and challenge itself.<br><br>I walked away with:
+  </p>
+
+  <ul>
+    <li>A deeper understanding of Python internals and threading</li><li>New connections with developers pushing Python’s boundaries</li>
+  </ul>
+
+  <p>
+    Renewed excitement to contribute — and maybe even test out the no-GIL branch myself<br><br>If you’ve been waiting for Python to embrace true concurrency, this is the time to start paying attention. Free-threaded Python is coming — and it’s going to reshape how we think about performance.<br>
+  </p>
+
+    <h2 id="photo-highlights">
+      📸 Photo Highlights
+    </h2>
+
+  <div  class="gallery-wrapper">
+    <div class="gallery" data-columns="3">
+      <figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/144ab3f1a8210c7cc2dc36b55d2685" data-size="1080x1440">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/144ab3f1a8210c7cc2dc36b55d2685" height="1440" width="1080" alt="Meet with guido" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/2d38016a6584baf7eb1033ebe825fb" data-size="1434x1076">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/2d38016a6584baf7eb1033ebe825fb" height="1076" width="1434" alt="Meet with Gao Tian (Microsoft SDE)" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/c8b7dbc10861620223970aef50922c" data-size="1440x1080">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/c8b7dbc10861620223970aef50922c" height="1080" width="1440" alt="GPU Computing" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/1b6e507cccfb21d687c3357dccb806" data-size="1440x1080">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/1b6e507cccfb21d687c3357dccb806" height="1080" width="1440" alt="Nix community Talk" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/2bdc805a765c851a3c8eef33e1f3dd" data-size="1080x1440">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/2bdc805a765c851a3c8eef33e1f3dd" height="1440" width="1080" alt="Badage of PyCon 2025" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/586a61d2b2c280e49ad200f9d5c310" data-size="1080x1440">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/586a61d2b2c280e49ad200f9d5c310" height="1440" width="1080" alt="Python Core Dev" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/d527ea55d36317fe634e7cdf66cb00" data-size="1440x1080">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/d527ea55d36317fe634e7cdf66cb00" height="1080" width="1440" alt="Group Photos with Friends" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/6ad325d0ebf143bc5f464e8951a4dc" data-size="1440x1080">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/6ad325d0ebf143bc5f464e8951a4dc" height="1080" width="1440" alt="Dinner with Friends" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/23/gallery/a2ff418f16b5233768503d8001877d" data-size="1080x1440">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/23/gallery/a2ff418f16b5233768503d8001877d" height="1440" width="1080" alt="CMU Campus photo" >
+      </a>
+      
+    </figure>
+    </div>
+  </div>
+
+    <h2 id="final-thoughts">
+      Final Thoughts
+    </h2>
+
+  <p>
+    Huge thanks to the PyCon organizers, volunteers, speakers, and everyone who made the event what it was. Whether you’re deep into systems-level Python or just curious about where things are going, this year’s conference had something for everyone.<br><br>Let me know if you’re experimenting with Free-threaded Python — I’d love to hear your thoughts or collaborate!
+  </p>
+
+  <p>
+    <strong>#PyCon2025 #Python #PEP703 #FreeThreadedPython #OpenSource #GuidoVanRossum #Concurrency #PythonInternals</strong>
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Reaching for the Stars: My Journey with Waterloo Rocketry’s First Liquid Engine Launch</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/reaching-for-the-stars-my-journey-with-waterloo-rocketrys-first-liquid-engine-launch/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/reaching-for-the-stars-my-journey-with-waterloo-rocketrys-first-liquid-engine-launch/index.html</id>
+
+        <updated>2024-10-06T23:42:51-04:00</updated>
+            <summary>
+                <![CDATA[
+                    
+  <p>
+    <br>August 20, 2024, is a day that I’ll never forget. Standing on the barren launch field just outside Timmins, Ontario, I watched with my heart racing as ‘Borealis,’ a rocket designed and built entirely by students at the <a href="https://www.waterloorocketry.com/">Waterloo Rocketry Team</a>, soared into the sky. It was not just any rocket, but the <a href="https://kitchener.ctvnews.ca/university-of-waterloo-students-aim-for-the-stars-with-canada-s-first-ever-liquid-rocket-1.7025112">first-ever Canadian liquid bi-propellant rocket</a>—a historic milestone that I had the privilege to be part of.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/22/borealis.c0e2e86f28826187910f.png" height="1080" width="1080" alt=""  sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-2xl.webp 1600w">
+      
+    </figure>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    <br>August 20, 2024, is a day that I’ll never forget. Standing on the barren launch field just outside Timmins, Ontario, I watched with my heart racing as ‘Borealis,’ a rocket designed and built entirely by students at the <a href="https://www.waterloorocketry.com/">Waterloo Rocketry Team</a>, soared into the sky. It was not just any rocket, but the <a href="https://kitchener.ctvnews.ca/university-of-waterloo-students-aim-for-the-stars-with-canada-s-first-ever-liquid-rocket-1.7025112">first-ever Canadian liquid bi-propellant rocket</a>—a historic milestone that I had the privilege to be part of.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/22/borealis.c0e2e86f28826187910f.png" height="1080" width="1080" alt=""  sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/borealis.c0e2e86f28826187910f-2xl.webp 1600w">
+      
+    </figure>
+
+
+    <blockquote class="blockquote">
+      Music originates 《<a href="https://youtu.be/23vCc1t0aNQ?si=cnwNcPCnNQiiFliJ">Robot Dreams | September</a>》 from YouTube Channel “<a href="https://www.youtube.com/@gailhan5528">Gail Han</a>”
+    </blockquote>
+<div><h3><strong><audio loading="lazy" autoplay="autoplay" controls="controls" preload="auto" src="../media/files/Robot Dreams  September.mp3" data-mce-fragment="1">
+			你的浏览器不支持audio标签</audio></strong></h3>
+<h3><strong>A Fusion of Theory and Application</strong></h3></div>
+
+  <p>
+    For the past year, my role as the Software Developer has been both thrilling and challenging. Designing software that controls and monitors a rocket isn’t something you find in typical coursework, and every line of code we wrote carried the weight of months of planning, countless testing sessions, and, of course, the pressure of launching Canada’s first liquid engine rocket. But seeing ‘Borealis’ reach an altitude of 5,855 meters (19,212 feet) and hit a top speed of 1646 km/h made every late night and every obstacle worth it.<br><br>
+  </p>
+
+    <h2 id="from-idea-to-launch-pad-a-team-effort">
+      From Idea to Launch Pad: A Team Effort
+    </h2>
+
+  <p>
+    When we set out to build ‘Borealis,’ the stakes were high. We were venturing into uncharted territory, developing a liquid bi-propellant rocket powered by ethanol and nitrous oxide—a complex system that required precision and careful coordination across multiple sub-teams. As a team, we had to perfect everything from fluid dynamics and combustion to structural integrity and flight control. Our software had to be as resilient as the physical rocket itself, ready to handle anything the flight might throw at us.<br><br>It’s hard to capture the sheer complexity of what goes on behind the scenes. Our software team worked closely with every other sub-team—propulsion, avionics, structures—ensuring that all systems communicated seamlessly. We developed custom simulation tools to model and predict how ‘Borealis’ would perform under different scenarios. We built an intricate telemetry system that allowed us to track and visualize real-time data during the flight, giving us eyes in the sky as we monitored key metrics like altitude, speed, and orientation.
+  </p>
+<div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Z126ZESX3uA?si=A_UdD5JqDZl6PvIb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</div>
+
+    <h2 id="moments-of-triumph-and-challenge">
+      Moments of Triumph and Challenge
+    </h2>
+
+  <p>
+    Of course, not everything went smoothly. There were moments of uncertainty, where weeks of work seemed on the brink of collapse. We experienced setbacks, debated over design decisions, and sometimes hit walls where progress felt like a distant dream. But what I’ll always remember is the team’s resilience—the way we pulled together, learned from each mistake, and kept moving forward.<br><br>I remember one particular afternoon vividly. We were conducting a static fire test, running our flight control software with the engine firing on the test stand. Everything looked perfect on paper, but as we initiated the test and ramped up the pressure of the fuel, unexpected oscillations began to appear. It was a tense moment—one of those “all hands on deck” situations. Yet, as we worked through the issue, tweaking parameters and debugging the pressure controls in real-time, we managed to identify the problem. After refining our code and verifying the fix, we saw the system stabilize and perform flawlessly. It was a huge relief and a testament to our team’s resilience and problem-solving skills.<br>
+  </p>
+<div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/ZWvHEy1VRlg?si=3hFkXuVtqGbUqwnv&amp;start=12" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+
+    <h2 id="witnessing-the-launch-a-personal-milestone">
+      Witnessing the Launch: A Personal Milestone
+    </h2>
+
+  <p>
+    Watching ‘Borealis’ lift off the ground, I felt a surge of pride and relief. For those few moments, as the rocket arched through the sky and the roar of the engines echoed across the field, time seemed to stand still. It was a culmination of not just my own work, but the collective effort of everyone on the team. This was our moment—a testament to what we can achieve when we bring our diverse talents and relentless passion together.<br><br>The successful launch of ‘Borealis’ is more than just a technical accomplishment for us; it’s a statement. It shows that a group of students, armed with nothing but knowledge, determination, and a shared dream, can push the boundaries of what’s possible in rocketry. This project positions the University of Waterloo among a select few institutions globally to have successfully launched a liquid-engine rocket, and I’m honored to have contributed to this legacy.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/22/cover_home.png" height="2000" width="3000" alt=""  sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/22/responsive/cover_home-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/cover_home-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/cover_home-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/cover_home-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/cover_home-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/22/responsive/cover_home-2xl.webp 1600w">
+      
+    </figure>
+
+    <h2 id="whats-next-for-waterloo-rocketrylessbrgreater">
+      What’s Next for Waterloo Rocketry?<br>
+    </h2>
+
+  <p>
+    This is just the beginning. With the successful launch of ‘Borealis,’ our team is setting its sights even higher—literally and figuratively. As I step into the role of software project leader this year, I’m excited to push our team to reach even greater altitudes. We’re already planning our next project, aiming for larger rockets, more ambitious payloads, and even higher altitudes. Our focus will be on refining our liquid propulsion technology and taking on new challenges that test our engineering prowess and innovation.&nbsp;
+  </p>
+
+  <p>
+    If there’s one thing I’ve learned from this experience, it’s that the sky is not the limit—it’s just the beginning of the journey. I’m excited to keep pushing forward, both as a software engineer and as part of the incredible Waterloo Rocketry team. Stay tuned, because there’s much more to come!<br><br>
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>University of Waterloo (MATHEMATICS) 🙃🩷</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/university-of-waterloo-mathematics/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/university-of-waterloo-mathematics/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/17/dji_fly_20230828_154416_13_1693251896657_photo.JPG" medium="image" />
+
+        <updated>2024-04-14T13:42:28-04:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/17/dji_fly_20230828_154416_13_1693251896657_photo.JPG" alt="" />
+                    <figure class="post__image align-center"><img loading="lazy"  src="https://blog.jiucheng-zang.ca/media/posts/17/IMG_6937.PNG" alt="" width="140" height="140" sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-2xl.webp 1600w"></figure>
+<p>Embarking on the academic journey at the University of Waterloo as a Mathematics and Computer Science student has been nothing short of an exhilarating adventure. With its rich legacy in both disciplines, Waterloo has provided me with a unique platform to delve into the depths of theoretical mathematics while simultaneously exploring the practical applications of computer science. As I reflect on my time here, I can't help but marvel at the myriad of experiences and opportunities that have shaped my academic learning.</p>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/17/dji_fly_20230828_154416_13_1693251896657_photo.JPG" class="type:primaryImage" alt="" /></p>
+                <figure class="post__image align-center"><img loading="lazy"  src="https://blog.jiucheng-zang.ca/media/posts/17/IMG_6937.PNG" alt="" width="140" height="140" sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-2xl.webp 1600w"></figure>
+<p>Embarking on the academic journey at the University of Waterloo as a Mathematics and Computer Science student has been nothing short of an exhilarating adventure. With its rich legacy in both disciplines, Waterloo has provided me with a unique platform to delve into the depths of theoretical mathematics while simultaneously exploring the practical applications of computer science. As I reflect on my time here, I can't help but marvel at the myriad of experiences and opportunities that have shaped my academic learning.</p>
+
+<h3><strong><audio loading="lazy" autoplay="autoplay" controls="controls" preload="auto" src="../media/files/SummerDays.mp3" data-mce-fragment="1">
+			你的浏览器不支持audio标签</audio></strong></h3>
+<h3><strong>A Fusion of Theory and Application</strong></h3>
+<p>At Waterloo, the academic curriculum seamlessly integrates theoretical concepts with real-world applications, offering students a holistic understanding of Mathematics and Computer Science. From foundational courses in calculus, linear algebra, and discrete mathematics to advanced topics in algorithms, machine learning, and cryptography, the program is designed to cultivate analytical thinking and problem-solving skills essential for both fields.</p>
+<h3>Embracing Challenges and Growth</h3>
+<p>While the academic rigour at Waterloo can be challenging at times, it has also been incredibly rewarding. The opportunity to tackle complex problems, overcome obstacles, and persevere in the face of adversity has been instrumental in my personal and intellectual growth. Whether it's mastering a new programming language, proving a theorem, or designing an algorithm, every challenge has been a stepping stone towards honing my skills and becoming a better mathematician and computer scientist.</p>
+<h3>Looking Ahead</h3>
+<p>As I continue my academic journey at the University of Waterloo, I am excited about the opportunities that lie ahead. Whether it's exploring advanced topics in mathematics, delving deeper into the realm of artificial intelligence, or pursuing research projects that have the potential to make a real-world impact, I am confident that the knowledge and skills I've acquired here will serve as a solid foundation for future endeavours.</p>
+<figure class="post__image"><img loading="lazy"  style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);" src="https://blog.jiucheng-zang.ca/media/posts/17/IMG_2415.jpg" alt="" width="4032" height="3024" sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_2415-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_2415-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_2415-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_2415-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_2415-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_2415-2xl.webp 1600w"></figure>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="4">
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9940.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9940-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9887.jpg" data-size="3024x4032"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9887-thumbnail.webp" alt="" width="720" height="960"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9828.jpg" data-size="1152x2048"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9828-thumbnail.webp" alt="" width="720" height="1280"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_0030.jpg" data-size="3024x4032"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_0030-thumbnail.webp" alt="" width="720" height="960"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7928.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7928-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7794.jpg" data-size="3024x4032"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7794-thumbnail.webp" alt="" width="720" height="960"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_0312.jpg" data-size="3024x4032"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_0312-thumbnail.webp" alt="" width="720" height="960"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7835.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7835-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9244.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9244-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9235.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_9235-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7886.jpg" data-size="3024x4032"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_7886-thumbnail.webp" alt="" width="720" height="960"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_0019.jpg" data-size="658x1000"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/17/gallery/IMG_0019-thumbnail.webp" alt="" width="658" height="1000"></a></figure>
+</div></div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Cuba 🇨🇺</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/cuba/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/cuba/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/14/IMG_4301.JPG" medium="image" />
+
+        <updated>2023-01-04T21:16:59-05:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/14/IMG_4301.JPG" alt="" />
+                    <div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/F_SnmG3pCwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/14/IMG_4301.JPG" class="type:primaryImage" alt="" /></p>
+                <div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/F_SnmG3pCwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+
+
+  <p>
+    
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Vanier CÈGEP 📕</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/vanier-cegep/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/vanier-cegep/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/12/IMG_2656.jpg" medium="image" />
+
+        <updated>2022-08-25T09:45:35-04:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/12/IMG_2656.jpg" alt="" />
+                    It's a new year for a new start! I will&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/12/IMG_2656.jpg" class="type:primaryImage" alt="" /></p>
+                
+  <p>
+    It's a new year for a new start! I will keep going in this new environment also hope to make more friends here.&nbsp;
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/12/IMG_2660.jpg" height="3024" width="4032" alt=""  sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/12/responsive/IMG_2660-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/12/responsive/IMG_2660-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/12/responsive/IMG_2660-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/12/responsive/IMG_2660-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/12/responsive/IMG_2660-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/12/responsive/IMG_2660-2xl.webp 1600w">
+      
+    </figure>
+
+  <div  class="gallery-wrapper gallery-wrapper--full">
+    <div class="gallery" data-columns="3">
+      <figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2641-2.jpg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2641-2-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2629-2.jpg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2629-2-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2657-2.jpg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2657-2-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2670-2.jpg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2670-2-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2642.jpg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2642-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2644.jpg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/12/gallery/IMG_2644-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure>
+    </div>
+  </div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Québec City Vlog 🧑🏻 🚘</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/qubec-city-vlog/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/qubec-city-vlog/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/11/Photo_6553716_DJI_116_jpg_5323409_0_2022731203336_photo_original-2.jpg" medium="image" />
+
+        <updated>2022-08-06T17:03:12-04:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/11/Photo_6553716_DJI_116_jpg_5323409_0_2022731203336_photo_original-2.jpg" alt="" />
+                    <div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/rWJWUrqU2Os" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/11/Photo_6553716_DJI_116_jpg_5323409_0_2022731203336_photo_original-2.jpg" class="type:primaryImage" alt="" /></p>
+                <div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/rWJWUrqU2Os" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div>
+
+
+  <p>
+    
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>U.S.A. Vacation 🇺🇸</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/usa-vacation/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/usa-vacation/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/10/IMG_1514.jpeg" medium="image" />
+
+        <updated>2022-07-16T15:04:25-04:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/10/IMG_1514.jpeg" alt="" />
+                    
+  <p id="20220625--20220704">
+    2022/06/25 — 2022/07/04
+  </p>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/10/IMG_1514.jpeg" class="type:primaryImage" alt="" /></p>
+                
+  <p id="20220625--20220704">
+    2022/06/25 — 2022/07/04
+  </p>
+
+<div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/qDMJkX1r1II" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+
+  <div  class="gallery-wrapper gallery-wrapper--full">
+    <div class="gallery" data-columns="5">
+      <figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1527.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1527-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/FullSizeRender-1.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/FullSizeRender-1-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/FullSizeRender-2.jpeg" data-size="3941x2216">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/FullSizeRender-2-thumbnail.webp" height="405" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/FullSizeRender.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/FullSizeRender-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1521.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1521-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1553.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1553-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1574.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1574-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1582.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1582-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1590.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1590-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1592.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1592-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1596.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1596-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1625.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1625-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1698.jpeg" data-size="2316x3088">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1698-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1702.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1702-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1710.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1710-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1738.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1738-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1740.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1740-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1743.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1743-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1818.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1818-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1832.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1832-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1837.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1837-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1839.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1839-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1850.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1850-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1859.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1859-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1871.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1871-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1873.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1873-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1943.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1943-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1963.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1963-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1992.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_1992-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_2012.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_2012-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_2040.jpeg" data-size="3024x4032">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_2040-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_2042.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_2042-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_4343.jpeg" data-size="2316x3088">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_4343-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_4485.jpeg" data-size="2864x3819">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_4485-thumbnail.webp" height="960" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_4583.jpeg" data-size="4032x3024">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/IMG_4583-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553603_DJI_3_jpg_6118438_0_202262910254_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553603_DJI_3_jpg_6118438_0_202262910254_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553607_DJI_7_jpg_5872996_0_202262616282_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553607_DJI_7_jpg_5872996_0_202262616282_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553608_DJI_8_jpg_4036190_0_2022626162818_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553608_DJI_8_jpg_4036190_0_2022626162818_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553615_DJI_15_jpg_5640714_0_202263021116_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553615_DJI_15_jpg_5640714_0_202263021116_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553617_DJI_17_jpg_4484105_0_202263021134_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553617_DJI_17_jpg_4484105_0_202263021134_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553624_DJI_24_jpg_6648035_0_202271151652_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553624_DJI_24_jpg_6648035_0_202271151652_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553649_DJI_49_jpg_6496892_0_202272173320_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553649_DJI_49_jpg_6496892_0_202272173320_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553656_DJI_56_jpg_6585905_0_202272174214_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553656_DJI_56_jpg_6585905_0_202272174214_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553659_DJI_59_jpg_5882937_0_202272174332_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553659_DJI_59_jpg_5882937_0_202272174332_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553721_DJI_121_jpg_4554191_0_2022627122238_photo_original.jpg.jpeg" data-size="4000x3000">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/10/gallery/Photo_6553721_DJI_121_jpg_4554191_0_2022627122238_photo_original.jpg-thumbnail.webp" height="540" width="720" alt="" >
+      </a>
+      
+    </figure>
+    </div>
+  </div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>LHA Music Night！🎵</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/lha-music-night/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/lha-music-night/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/8/281642903_1678451065865652_2859882371418473844_n-2.jpg" medium="image" />
+
+        <updated>2022-05-21T15:35:08-04:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/8/281642903_1678451065865652_2859882371418473844_n-2.jpg" alt="" />
+                    On May 18th, 2022, we came together as a musical&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/8/281642903_1678451065865652_2859882371418473844_n-2.jpg" class="type:primaryImage" alt="" /></p>
+                
+  <p id="on-may-18th-2022-we-came-together-as-a-musical-family-at-night-to-put-on-this-amazing-show-thanks-to-all-my-classmates-mr-anthopoulos-and-all-the-people-who-helped-us-behind-the-show-during-these-six-weeks-of-training-you-have-made-me-truly-love-music-and-i-am-honored-to-be-a-part-of-this-band-it-will-always-be-a-good-part-of-my-memory">
+    On May 18th, 2022, we came together as a musical family at night to put on this amazing show. Thanks to all my classmates, Mr. Anthopoulos, and all the people who helped us behind the show during these six weeks of training. You have made me truly love music and I am honored to be a part of this band. It will always be a good part of my memory.
+  </p>
+
+  <p>
+    Video:&nbsp;<a href="https://www.instagram.com/tv/CduMSNkF_jQ/?utm_source=ig_web_copy_link" target="_blank">https://www.instagram.com/tv/CduMSNkF_jQ/?utm_source=ig_web_copy_link</a>
+  </p>
+
+  <div  class="gallery-wrapper gallery-wrapper--full">
+    <div class="gallery" data-columns="3">
+      <figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/8/gallery/281329533_161480786333055_2061872505733550605_n-2.jpg" data-size="1080x811">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/8/gallery/281329533_161480786333055_2061872505733550605_n-2-thumbnail.webp" height="541" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/8/gallery/281337766_378658034190716_7606290427656722646_n-2.jpg" data-size="1080x814">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/8/gallery/281337766_378658034190716_7606290427656722646_n-2-thumbnail.webp" height="543" width="720" alt="" >
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://blog.jiucheng-zang.ca/media/posts/8/gallery/281440582_461400769086479_7925680810180482604_n-2.jpg" data-size="1080x814">
+        <img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/8/gallery/281440582_461400769086479_7925680810180482604_n-2-thumbnail.webp" height="543" width="720" alt="" >
+      </a>
+      
+    </figure>
+    </div>
+  </div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Graduation 2022 of LHA🎓</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/graduation-2022-of-lha/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/graduation-2022-of-lha/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/5/Xia-Zai.jpg" medium="image" />
+
+        <updated>2022-02-05T23:14:12-05:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/5/Xia-Zai.jpg" alt="" />
+                    Instagram In August 2022 I will graduate from LHA. Thanks&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/5/Xia-Zai.jpg" class="type:primaryImage" alt="" /></p>
+                <figure class="post__image"><a href="https://www.instagram.com/lhaclassof2022/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.instagram.com/lhaclassof2022/" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal); border-bottom: 3px solid rgba(var(--yellow), 1);"><img loading="lazy"  style="outline: 3px solid rgba(var(--primary-color-rgb), 0.55)  !important;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png" alt="" width="29" height="29" data-is-external-image="true"></figure></a></p>
+<p>In August 2022 I will graduate from LHA. Thanks to all the professors who help me a lot. (Help me get through the language barrier) I will continue my studying at CÉGEP. That's a new challenge for me. I will keep working hard🙃</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="1">
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/5/gallery/2021_11_26_19_56_IMG_6883.JPG" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/5/gallery/2021_11_26_19_56_IMG_6883-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/5/gallery/Wei-Biao-Ti-1-Kao-Bei.jpg" data-size="2400x3360"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/5/gallery/Wei-Biao-Ti-1-Kao-Bei-thumbnail.webp" alt="" width="720" height="1008"></a></figure>
+</div></div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>3-D printing club (LaurenHill Academy)💻</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/3-d-printing-club-laurenhill-academy/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/3-d-printing-club-laurenhill-academy/index.html</id>
+        <media:content url="https://blog.jiucheng-zang.ca/media/posts/4/775.jpeg" medium="image" />
+
+        <updated>2022-02-05T14:03:07-05:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://blog.jiucheng-zang.ca/media/posts/4/775.jpeg" alt="" />
+                    In 2021-2022, I started to host a 3D printing club&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/4/775.jpeg" class="type:primaryImage" alt="" /></p>
+                <p class="align-left">In 2021-2022, I started to host a 3D printing club with Ms. Stark at LaurenHill Academy. The idea comes to my mind just because I want to pass on this technology and let more people enjoy it. I try my best to prepare for the courses. The results are very satisfying and I have made a lot of friends and gotten a lot of people to like 3-d print technology!</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211123_160925.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211123_160925-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_110052.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_110052-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_115045-2.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_115045-2-thumbnail.webp" alt="" width="720" height="540"></a></figure>
+</div></div>
+            ]]>
+        </content>
+    </entry>
+</feed>
