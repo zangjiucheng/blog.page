@@ -121,7 +121,7 @@
 		$('.scrolly').scrolly();
 
 	// Background.
-		$wrapper._parallax(0.925);
+		$('<div class="bg fixed"></div>').appendTo($wrapper);
 
 	// Nav Panel.
 

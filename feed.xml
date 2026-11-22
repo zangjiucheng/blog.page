@@ -3,12 +3,39 @@
     <title>Jiucheng Zang · Blog</title>
     <link href="https://blog.jiucheng-zang.ca/feed.xml" rel="self" />
     <link href="https://blog.jiucheng-zang.ca" />
-    <updated>2025-11-02T09:20:15-05:00</updated>
+    <updated>2026-11-22T00:48:21-05:00</updated>
     <author>
         <name>Jiucheng Zang</name>
     </author>
     <id>https://blog.jiucheng-zang.ca</id>
 
+    <entry>
+        <title>Finding a Balance with AI Agents in Software Engineering</title>
+        <author>
+            <name>Jiucheng Zang</name>
+        </author>
+        <link href="https://blog.jiucheng-zang.ca/finding-a-balance-with-ai-agents-in-software-engineering/index.html"/>
+        <id>https://blog.jiucheng-zang.ca/finding-a-balance-with-ai-agents-in-software-engineering/index.html</id>
+
+        <updated>2026-11-22T00:40:00-05:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Working at Venuiti has given me the chance to hear different perspectives on AI agents and the future of software engineering. A few conversations have stayed with me. When I spoke with our CEO Thomas&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    Working at Venuiti has given me the chance to hear different perspectives on AI agents and the future of software engineering. A few conversations have stayed with me.<br><br>When I spoke with our CEO Thomas S. and Jordan H., we discussed what it takes to design a real agent loop: one that can work toward an outcome, evaluate its progress, and continue rather than simply produce a single answer. We also talked about the bigger picture. Human attention is limited, so the goal is to direct it toward the decisions that matter most.<br><br>A conversation with <a href="https://www.linkedin.com/in/ottomen/">Artur S.</a> brought another side of the problem into focus. AI does not always have the right context, especially in backend work, and can miss what is important. Someone still needs to understand the system, decide what matters, and review the result.<br><br>With <a href="https://www.linkedin.com/in/brent-mcnatt-958037339/">Brent M.</a> , I also discussed how a multi-level decision network could preserve context and maintain a traceable tree of decisions as information changes. One approach I proposed is ContextDB (https://zangjiucheng.github.io/ContextDB/), which explores how agents can share context and track when prior knowledge needs to be reconsidered.<br><br>For me, the balance is to give agents room to handle well-defined work while keeping people responsible for context, judgment, and outcomes. As these tools improve, I think software engineers will spend more attention on understanding systems, making decisions, and verifying that the result actually solves the problem.
+  </p>
+
+  <p>
+    
+  </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>PyCon 2025 Reflections: Free-Threaded Python, Performance Evolution, and Meeting Guido 🧑‍💻</title>
         <author>
@@ -18,7 +45,7 @@
         <id>https://blog.jiucheng-zang.ca/pycon-2025-reflections-free-threaded-python-performance-evolution-and-meeting-guido/index.html</id>
 
         <updated>2025-05-20T11:57:16-04:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                     
     <h2 id="introductionlessbrgreater">
@@ -89,7 +116,7 @@
     </h3>
 
   <p>
-    If you’re curious and want to get hands-on with Free-threaded Python, the best place to start is the <a href="https://www.python.org/downloads/release/python-3140a4/">python3.14t build </a>— the experimental no-GIL version of CPython, currently maintained and invited by the Meta team.
+    Update (November 2026): Python 3.14 made the free-threaded build officially supported under PEP 779. It remains optional; the standard build still uses the GIL by default. Check extension compatibility and test your own workload before adopting it. See https://peps.python.org/pep-0779/ and https://docs.python.org/3/howto/free-threading-python.html.<br><br>If you’re curious and want to get hands-on with Free-threaded Python, the best place to start is the <a href="https://www.python.org/downloads/release/python-3140a4/">python3.14t build </a>— the experimental no-GIL version of CPython, currently maintained and invited by the Meta team.
   </p>
 
     <blockquote class="blockquote">
@@ -210,7 +237,7 @@
         <id>https://blog.jiucheng-zang.ca/reaching-for-the-stars-my-journey-with-waterloo-rocketrys-first-liquid-engine-launch/index.html</id>
 
         <updated>2024-10-06T23:42:51-04:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                     
   <p>
@@ -304,7 +331,7 @@
         <media:content url="https://blog.jiucheng-zang.ca/media/posts/17/dji_fly_20230828_154416_13_1693251896657_photo.JPG" medium="image" />
 
         <updated>2024-04-14T13:42:28-04:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                         <img src="https://blog.jiucheng-zang.ca/media/posts/17/dji_fly_20230828_154416_13_1693251896657_photo.JPG" alt="" />
                     <figure class="post__image align-center"><img loading="lazy"  src="https://blog.jiucheng-zang.ca/media/posts/17/IMG_6937.PNG" alt="" width="140" height="140" sizes="(max-width: 48em) 100vw, 768px" srcset="https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-xs.webp 300w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-sm.webp 480w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-md.webp 768w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-lg.webp 1024w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-xl.webp 1360w ,https://blog.jiucheng-zang.ca/media/posts/17/responsive/IMG_6937-2xl.webp 1600w"></figure>
@@ -354,7 +381,7 @@
         <media:content url="https://blog.jiucheng-zang.ca/media/posts/14/IMG_4301.JPG" medium="image" />
 
         <updated>2023-01-04T21:16:59-05:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                         <img src="https://blog.jiucheng-zang.ca/media/posts/14/IMG_4301.JPG" alt="" />
                     <div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/F_SnmG3pCwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
@@ -383,10 +410,10 @@
         <media:content url="https://blog.jiucheng-zang.ca/media/posts/12/IMG_2656.jpg" medium="image" />
 
         <updated>2022-08-25T09:45:35-04:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                         <img src="https://blog.jiucheng-zang.ca/media/posts/12/IMG_2656.jpg" alt="" />
-                    It's a new year for a new start! I will&hellip;
+                    It's a new year for a new start! I will keep going in this new environment also hope to make more friends here.&nbsp;
                 ]]>
             </summary>
         <content type="html">
@@ -450,7 +477,7 @@
         <media:content url="https://blog.jiucheng-zang.ca/media/posts/11/Photo_6553716_DJI_116_jpg_5323409_0_2022731203336_photo_original-2.jpg" medium="image" />
 
         <updated>2022-08-06T17:03:12-04:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                         <img src="https://blog.jiucheng-zang.ca/media/posts/11/Photo_6553716_DJI_116_jpg_5323409_0_2022731203336_photo_original-2.jpg" alt="" />
                     <div><div class="post__iframe"><iframe loading="lazy" width="560" height="315" src="https://www.youtube-nocookie.com/embed/rWJWUrqU2Os" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -481,7 +508,7 @@
         <media:content url="https://blog.jiucheng-zang.ca/media/posts/10/IMG_1514.jpeg" medium="image" />
 
         <updated>2022-07-16T15:04:25-04:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                         <img src="https://blog.jiucheng-zang.ca/media/posts/10/IMG_1514.jpeg" alt="" />
                     
@@ -744,10 +771,10 @@
         <media:content url="https://blog.jiucheng-zang.ca/media/posts/8/281642903_1678451065865652_2859882371418473844_n-2.jpg" medium="image" />
 
         <updated>2022-05-21T15:35:08-04:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                         <img src="https://blog.jiucheng-zang.ca/media/posts/8/281642903_1678451065865652_2859882371418473844_n-2.jpg" alt="" />
-                    On May 18th, 2022, we came together as a musical&hellip;
+                    On May 18th, 2022, we came together as a musical family at night to put on this amazing show. Thanks to all my classmates, Mr. Anthopoulos, and all the people who helped us behind the&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -795,10 +822,10 @@
         <media:content url="https://blog.jiucheng-zang.ca/media/posts/5/Xia-Zai.jpg" medium="image" />
 
         <updated>2022-02-05T23:14:12-05:00</updated>
-            <summary>
+            <summary type="html">
                 <![CDATA[
                         <img src="https://blog.jiucheng-zang.ca/media/posts/5/Xia-Zai.jpg" alt="" />
-                    Instagram In August 2022 I will graduate from LHA. Thanks&hellip;
+                    Instagram In August 2022 I will graduate from LHA. Thanks to all the professors who help me a lot. (Help me get through the language barrier) I will continue my studying at CÉGEP. That's a&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -809,34 +836,6 @@
 <div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="1">
 <figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/5/gallery/2021_11_26_19_56_IMG_6883.JPG" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/5/gallery/2021_11_26_19_56_IMG_6883-thumbnail.webp" alt="" width="720" height="540"></a></figure>
 <figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/5/gallery/Wei-Biao-Ti-1-Kao-Bei.jpg" data-size="2400x3360"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/5/gallery/Wei-Biao-Ti-1-Kao-Bei-thumbnail.webp" alt="" width="720" height="1008"></a></figure>
-</div></div>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>3-D printing club (LaurenHill Academy)💻</title>
-        <author>
-            <name>Jiucheng Zang</name>
-        </author>
-        <link href="https://blog.jiucheng-zang.ca/3-d-printing-club-laurenhill-academy/index.html"/>
-        <id>https://blog.jiucheng-zang.ca/3-d-printing-club-laurenhill-academy/index.html</id>
-        <media:content url="https://blog.jiucheng-zang.ca/media/posts/4/775.jpeg" medium="image" />
-
-        <updated>2022-02-05T14:03:07-05:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://blog.jiucheng-zang.ca/media/posts/4/775.jpeg" alt="" />
-                    In 2021-2022, I started to host a 3D printing club&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://blog.jiucheng-zang.ca/media/posts/4/775.jpeg" class="type:primaryImage" alt="" /></p>
-                <p class="align-left">In 2021-2022, I started to host a 3D printing club with Ms. Stark at LaurenHill Academy. The idea comes to my mind just because I want to pass on this technology and let more people enjoy it. I try my best to prepare for the courses. The results are very satisfying and I have made a lot of friends and gotten a lot of people to like 3-d print technology!</p>
-<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-columns="3">
-<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211123_160925.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211123_160925-thumbnail.webp" alt="" width="720" height="540"></a></figure>
-<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_110052.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_110052-thumbnail.webp" alt="" width="720" height="540"></a></figure>
-<figure class="gallery__item"><a href="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_115045-2.jpg" data-size="4032x3024"><img loading="lazy" src="https://blog.jiucheng-zang.ca/media/posts/4/gallery/20211124_115045-2-thumbnail.webp" alt="" width="720" height="540"></a></figure>
 </div></div>
             ]]>
         </content>
